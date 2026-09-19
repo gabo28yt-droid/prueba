@@ -619,6 +619,8 @@
     align-items:stretch;
   }
   .art-slot{
+    height:220px;
+    min-height:220px;
     border:1.5px dashed var(--slate-soft);
     border-radius:12px;
     background:var(--paper-2);
@@ -640,6 +642,32 @@
     max-height:100%;
     object-fit:contain;
     display:block;
+  }
+
+  .poem-slot{
+    grid-column:1 / -1;
+    min-height:170px;
+    margin-top:1rem;
+    border:1.5px dashed var(--slate-soft);
+    border-radius:12px;
+    background:var(--paper-2);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:1.4rem;
+    color:var(--slate);
+  }
+  .poem-slot h4{
+    margin:0 0 0.4rem 0;
+    font-size:1rem;
+    color:var(--navy-900);
+  }
+  .poem-slot p{
+    margin:0;
+    font-size:0.85rem;
+    color:var(--slate-soft);
   }
   .art-slot span{
     font-family:var(--font-mono);
@@ -737,7 +765,8 @@
     .project-card .img-slot{ height:220px; }
     .volunteer-row .img-slot{ height:240px; }
     .art-gallery{ grid-template-columns:repeat(2,1fr); }
-    .art-slot{ height:320px; }
+    .art-slot{ height:190px; min-height:190px; }
+    .poem-slot{ min-height:160px; }
     .cv-box{ flex-direction:column; align-items:flex-start; text-align:left; }
   }
 
@@ -1042,13 +1071,18 @@
 
     <div class="art-gallery">
       <div class="art-slot">
-        <img src="archivos/dibujo1.jpeg" alt="zentangle" >
+        <img src="archivos/dibujo1.jpeg" alt="Dibujo estilo ZenTangle 1">
       </div>
       <div class="art-slot">
-        <img src="archivos/dibujo2.jpeg" alt="zentangle" >
+        <img src="archivos/dibujo2.jpeg" alt="Dibujo estilo ZenTangle 2">
       </div>
       <div class="art-slot">
-        <img src="archivos/dibujo3.jpeg" alt="zentangle" >
+        <img src="archivos/dibujo3.jpeg" alt="Dibujo estilo ZenTangle 3">
+      </div>
+
+      <div class="poem-slot">
+        <h4>Espacio para mi poema</h4>
+        <p>Aquí podrás agregar el poema que has creado.</p>
       </div>
     </div>
   </section>
