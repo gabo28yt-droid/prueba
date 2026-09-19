@@ -1,8 +1,7 @@
 # Archivos del portafolio
 
-Coloca aquí todos los archivos que use la página: imágenes, certificados, diplomas, poema, CV y otros documentos.
+Aqui van ir todas las imagenes y pdfs
 
-Ejemplos:
 - foto-perfil.jpg
 - voluntariado1.jpeg
 - emertech.jpeg
