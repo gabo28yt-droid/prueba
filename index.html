@@ -518,6 +518,46 @@
     display:inline-block;
   }
 
+  .research-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1.5rem;
+    padding:1.35rem 1.5rem;
+    margin:0 0 2rem 0;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--white);
+  }
+  .research-card .research-kind{
+    font-family:var(--font-mono);
+    font-size:0.68rem;
+    color:var(--blue-500);
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:0.35rem;
+  }
+  .research-card h4{
+    font-size:1.05rem;
+    margin:0 0 0.25rem 0;
+  }
+  .research-card p{
+    margin:0;
+    color:var(--slate);
+    font-size:0.88rem;
+  }
+  .research-card a{
+    flex:0 0 auto;
+    background:var(--navy-900);
+    color:#fff;
+    text-decoration:none;
+    padding:0.65rem 0.9rem;
+    border-radius:9px;
+    font-size:0.78rem;
+    font-weight:600;
+  }
+
+
   /* Proyectos: grid uniforme, color de categoría como dato estructural */
   .project-grid{
     display:grid;
@@ -761,6 +801,14 @@
       grid-template-columns:1fr;
       direction:ltr;
     }
+    .research-card{
+      align-items:flex-start;
+      flex-direction:column;
+    }
+    .research-card a{
+      width:100%;
+      text-align:center;
+    }
     .project-grid{ grid-template-columns:1fr; }
     .project-card .img-slot{ height:220px; }
     .volunteer-row .img-slot{ height:240px; }
@@ -989,6 +1037,15 @@
       <span><i style="background:var(--cat-web)"></i>Plataformas web</span>
       <span><i style="background:var(--cat-nocode)"></i>Herramientas sin código</span>
       <span><i style="background:var(--cat-design)"></i>Diseño y modelado</span>
+    </div>
+
+    <div class="research-card">
+      <div>
+        <span class="research-kind">Investigación académica · Trabajo grupal</span>
+        <h4>Anteproyecto de investigación — Grupo C</h4>
+        <p>Documento de investigación elaborado en grupo como parte de mi formación académica.</p>
+      </div>
+      <a href="archivos/Anteproyecto-Grupo C-Huizúcar-GE.pdf" target="_blank" rel="noopener">Ver investigación ↗</a>
     </div>
 
     <div class="project-grid">
