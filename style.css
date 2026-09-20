@@ -785,37 +785,97 @@
   /* ===== 10. ADAPTACIÓN PARA CELULAR Y TABLET ===== */
   @media (max-width: 980px){
     :root{ --ancho-menu:0px; }
+
+    /* En celular el menú queda fijo arriba y no ocupa espacio lateral. */
+    body{ padding-top:7.6rem; }
+
     .sidebar{
-      position:relative;
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:auto;
       width:100%;
       height:auto;
-      flex-direction:row;
-      align-items:center;
-      flex-wrap:wrap;
-      padding:1.4rem 1.6rem;
-      gap:1rem 1.6rem;
+      min-height:0;
+      display:block;
+      padding:0.7rem 1rem 0;
+      z-index:1000;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 24px),
+        linear-gradient(180deg, var(--azul-oscuro) 0%, var(--azul-principal) 100%);
+      box-shadow:0 5px 18px rgba(3,13,28,0.28);
+      overflow:hidden;
     }
-    .brand-mark{ width:52px; height:52px; margin-bottom:0; }
-    .brand-mark-letters{ font-size:1rem; }
+
+    /* Primera fila: logo y nombre. */
+    .brand-mark{
+      display:inline-flex;
+      vertical-align:middle;
+      width:40px;
+      height:40px;
+      margin:0 0.55rem 0 0;
+      border-radius:12px 5px 12px 5px;
+    }
+    .brand-mark-letters{ font-size:0.85rem; }
     .brand-mark-caption{ display:none; }
-    .sidebar h1{ font-size:1.2rem; }
-    .sidebar .role{ margin-bottom:0; font-size:0.8rem; }
-    .sidebar-nav{
-      border-top:none;
-      padding-top:0;
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.2rem 0.6rem;
-      width:100%;
-      order:3;
+
+    .sidebar h1{
+      display:inline-block;
+      vertical-align:middle;
+      color:#fff;
+      font-size:1.08rem;
+      line-height:40px;
       margin:0;
     }
-    .sidebar-nav a{ padding:0.35rem 0.3rem; font-size:0.85rem; }
+
+    .sidebar .role{ display:none; }
+
+    /* Segunda fila: navegación horizontal desplazable. */
+    .sidebar-nav{
+      list-style:none;
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding:0.45rem 0 0.55rem;
+      margin:0;
+      display:flex;
+      flex-wrap:nowrap;
+      align-items:center;
+      gap:0.35rem;
+      width:100%;
+      overflow-x:auto;
+      overflow-y:hidden;
+      white-space:nowrap;
+      scrollbar-width:none;
+    }
+    .sidebar-nav::-webkit-scrollbar{ display:none; }
+    .sidebar-nav li{
+      flex:0 0 auto;
+      margin:0;
+    }
+    .sidebar-nav a{
+      display:block;
+      padding:0.42rem 0.72rem;
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:999px;
+      background:rgba(255,255,255,0.045);
+      color:rgba(255,255,255,0.78);
+      font-size:0.78rem;
+      line-height:1;
+    }
+    .sidebar-nav a:hover,
+    .sidebar-nav a:focus-visible{
+      background:rgba(255,255,255,0.11);
+      color:#fff;
+    }
+    .sidebar-nav .idx{ display:none; }
+
     .sidebar-footer{ display:none; }
+
     main{
       margin-left:0;
-      padding:0 1.4rem 2.5rem 1.4rem;
+      padding:0 1.1rem 2.5rem 1.1rem;
     }
+
     .hero-grid{ grid-template-columns:1fr; }
     .photo-frame{ order:-1; }
     .photo-slot{ aspect-ratio:16/9; border-radius:20px 6px 20px 6px; }
