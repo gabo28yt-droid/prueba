@@ -242,7 +242,7 @@
     position:relative;
     z-index:1;
     aspect-ratio:4/5;
-    border:1.5px dashed var(--texto-suave);
+    border:none;
     border-radius:32px 8px 32px 8px;
     background:var(--fondo-secundario);
     display:flex;
