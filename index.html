@@ -720,7 +720,7 @@
 
   .media-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:3rem .75rem 1rem;background:rgba(3,13,28,.88)}
   .media-toggle:checked + .media-modal{display:flex}
-  body:has(.media-toggle:checked){overflow:hidden}
+  
   .media-modal .modal-bg{position:absolute;inset:0}
   .media-modal .modal-close{position:absolute;top:.7rem;right:.8rem;z-index:2;width:2.4rem;height:2.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);color:#fff;text-decoration:none;font-size:1.5rem}
   .media-modal .modal-img{position:relative;z-index:1;max-width:94vw;max-height:84vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 20px 70px rgba(0,0,0,.45)}
@@ -834,7 +834,7 @@
     .cv-button{ transition:none; }
   }
 
-  .media-toggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .media-toggle{display:none}
   .media-toggle:checked + .media-modal{display:flex}
   .media-modal .modal-bg,.media-modal .modal-close{cursor:pointer}
 </style>
@@ -1066,7 +1066,7 @@
     <div class="project-grid">
       <div class="project-card" style="--accent:var(--cat-web)">
         <div class="img-slot">
-          <label class="media-trigger"  aria-label="Ampliar imagen" for="toggle-img-bitex"><img src="archivos/bitex.png" alt="Proyecto BiteX"></label>
+          <img src="archivos/bitex.png" alt="Proyecto BiteX">
         </div>
         <div class="body">
           <h4>BiteX</h4>
@@ -1077,7 +1077,7 @@
 
       <div class="project-card" style="--accent:var(--cat-design)">
         <div class="img-slot">
-          <label class="media-trigger"  aria-label="Ampliar imagen" for="toggle-img-refrescate"><img src="archivos/refrescate.jpeg" alt="Imagen del proyecto" ></label>
+          <img src="archivos/refrescate.jpeg" alt="Imagen del proyecto">
         </div>
         <div class="body">
           <h4>EcoEnvase 3D / Refresca-te</h4>
@@ -1088,7 +1088,7 @@
 
       <div class="project-card" style="--accent:var(--cat-nocode)">
         <div class="img-slot">
-          <label class="media-trigger"  aria-label="Ampliar imagen" for="toggle-img-carfix"><img src="archivos/carfix.jpeg" alt="Proyecto Carfix" ></label>        </div>
+          <img src="archivos/carfix.jpeg" alt="Proyecto Carfix">        </div>
         <div class="body">
           <h4>Carfix</h4>
           <p>Videos con soluciones para problemas automovilísticos a los que se puede recurrir en caso de emergencia.</p>
@@ -1097,7 +1097,7 @@
 
       <div class="project-card" style="--accent:var(--cat-nocode)">
         <div class="img-slot">
-          <label class="media-trigger"  aria-label="Ampliar imagen" for="toggle-img-emertech"><img src="archivos/emertech.jpeg" alt="Proyecto Emertech" ></label>
+          <img src="archivos/emertech.jpeg" alt="Proyecto Emertech">
         </div>
         <div class="body">
           <h4>Emertech</h4>
@@ -1108,7 +1108,7 @@
 
       <div class="project-card" style="--accent:var(--cat-web)">
         <div class="img-slot">
-          <label class="media-trigger"  aria-label="Ampliar imagen" for="toggle-img-medicoaching"><img src="archivos/medicoaching.jpeg" alt="Proyecto Medicoaching" ></label>
+          <img src="archivos/medicoaching.jpeg" alt="Proyecto Medicoaching">
         </div>
         <div class="body">
           <h4>Medicoaching</h4>
@@ -1119,7 +1119,7 @@
 
       <div class="project-card" style="--accent:var(--cat-web)">
         <div class="img-slot">
-          <label class="media-trigger"  aria-label="Ampliar imagen" for="toggle-img-comicquest"><img src="archivos/comicquest.jpeg" alt="Proyecto Comicquest" ></label>
+          <img src="archivos/comicquest.jpeg" alt="Proyecto Comicquest">
         </div>
         <div class="body">
           <h4>Comicquest</h4>
