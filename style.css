@@ -1126,16 +1126,34 @@
     /* Los proyectos se muestran en una sola columna en móvil. */
     .project-grid{
       grid-template-columns:1fr;
-      gap:1rem;
+      gap:1.2rem;
     }
     .project-card{
       width:100%;
+      border-radius:12px;
     }
     .project-card .img-slot{
-      height:210px;
+      height:180px;
+      padding:0.35rem;
     }
     .project-card .body{
-      padding:1rem 1.05rem 1.2rem 1.05rem;
+      padding:1rem 1rem 1.1rem 1rem;
+    }
+    .project-card h4{
+      font-size:1rem;
+      margin-bottom:0.3rem;
+    }
+    .project-card p{
+      font-size:0.86rem;
+      line-height:1.5;
+      margin-bottom:0.7rem;
+    }
+    .project-card .stack{
+      gap:0.3rem;
+    }
+    .project-card .stack li{
+      font-size:0.64rem;
+      padding:0.22rem 0.48rem;
     }
     .volunteer-row .img-slot{ height:240px; }
     /* La galería artística pasa a dos columnas en móvil. */
