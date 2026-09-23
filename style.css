@@ -240,12 +240,7 @@
     position:relative;
   }
   .photo-backdrop{
-    position:absolute;
-    top:22px; left:-20px; right:-20px; bottom:-20px;
-    border-radius:8px 32px 8px 32px;
-    background:repeating-linear-gradient(128deg, var(--azul-claro) 0 2px, transparent 2px 16px);
-    opacity:0.22;
-    z-index:0;
+    display:none;
   }
   .photo-slot{
     position:relative;
@@ -889,7 +884,7 @@
     .hero-grid{ grid-template-columns:1fr; }
     .photo-frame{ order:-1; }
     .photo-slot{ aspect-ratio:16/9; border-radius:20px 6px 20px 6px; }
-    .photo-backdrop{ top:14px; left:-10px; right:-10px; bottom:-10px; border-radius:6px 20px 6px 20px; }
+    .photo-backdrop{ display:none; }
     .achievement-highlights{ grid-template-columns:1fr; }
     .cert-slot{ flex-basis:160px; }
     .volunteer-row,
