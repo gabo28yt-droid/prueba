@@ -887,9 +887,9 @@
 .media-modal iframe{
   position:relative;
   z-index:1;
-  width:94vw;
-  max-width:1100px;
-  height:84vh;
+  width:96vw;
+  max-width:1200px;
+  height:88vh;
   border:0;
   border-radius:10px;
   background:#fff;
@@ -912,8 +912,8 @@
   }
 
   .media-modal iframe{
-    width:96vw;
-    height:82svh;
+    width:98vw;
+    height:88svh;
   }
 
   .media-modal .modal-img{
