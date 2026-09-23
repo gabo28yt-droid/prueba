@@ -1133,9 +1133,23 @@
     .cv-button{ transition:none; }
   }
 
-  /* Mantiene ocultos los checkbox que controlan los modales. */
-  .media-toggle{display:none}
-  .media-toggle:checked + .media-modal{display:flex}
+  /* Mantiene los checkbox fuera de la vista y evita que el navegador desplace la página hacia ellos al abrir una imagen. */
+  .media-toggle{
+    position:fixed;
+    top:0;
+    left:0;
+    width:1px;
+    height:1px;
+    opacity:0;
+    pointer-events:none;
+    margin:0;
+    padding:0;
+  }
+
+  .media-toggle:checked + .media-modal{
+    display:flex;
+  }
+
   /* Indica visualmente que el fondo y el botón de cierre se pueden pulsar. */
   .media-modal .modal-bg,
   .media-modal .modal-close{
