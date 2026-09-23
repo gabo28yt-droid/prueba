@@ -379,9 +379,22 @@
     padding:0 0 0.4rem 0;
     margin:0;
   }
-/* Elimina el número decorativo de la línea de tiempo dentro de la sublista. */
-  .sub-list li::before
-  .sub-list li::before{ content:none; }
+/* Reemplaza el número de la línea de tiempo por un punto sencillo en la sublista. */
+  .sub-list li::before{
+    content:"•";
+    position:absolute;
+    left:-0.9rem;
+    top:0;
+    width:auto;
+    height:auto;
+    background:none;
+    color:var(--azul-principal);
+    border-radius:0;
+    display:block;
+    font-family:inherit;
+    font-size:1rem;
+    line-height:1.6;
+  }
 
   /* ===== 6. LOGROS Y CERTIFICACIONES ===== */
 /* Distribuye las tarjetas de logros en columnas. */
