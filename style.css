@@ -1,3 +1,4 @@
+/* Este bloque define la identidad visual general del sitio: colores, fuentes y medidas reutilizables. */
 /* =========================================================
    ESTILOS PRINCIPALES DEL PORTAFOLIO
    Este archivo contiene únicamente el diseño visual de la página.
@@ -7,6 +8,7 @@
 
 /* ===== 1. COLORES, FUENTES Y MEDIDAS GENERALES ===== */
 /* Variables principales del sitio */
+/* Variables CSS: permiten cambiar colores, tipografías y el ancho del menú desde un solo lugar. */
   :root{
     --azul-oscuro:#071a33;
     --azul-principal:#0b2545;
@@ -33,8 +35,11 @@
     --ancho-menu:320px;
   }
 
+/* Hace que el ancho y alto de los elementos incluyan también su padding y borde. */
   *{box-sizing:border-box;}
+/* Hace suave el desplazamiento cuando se pulsa un enlace interno del menú. */
   html{scroll-behavior:smooth;}
+/* Estilos generales del documento completo. */
   body{
     margin:0;
     font-family:var(--fuente-cuerpo);
@@ -42,9 +47,12 @@
     background:var(--fondo);
     line-height:1.6;
   }
+/* Evita que las imágenes desborden su contenedor y elimina el espacio inferior típico de imágenes inline. */
   img{max-width:100%;display:block;}
+/* Los enlaces heredan el color del elemento donde están colocados. */
   a{color:inherit;}
 
+/* Estilos comunes para todos los títulos del portafolio. */
   h1,h2,h3,h4{
     font-family:var(--fuente-titulos);
     margin:0 0 0.4em 0;
@@ -52,13 +60,16 @@
     letter-spacing:-0.01em;
   }
 
+/* Da a los párrafos un margen inferior uniforme. */
   p{margin:0 0 1em 0;}
 
+/* Contenedor general reutilizable para limitar el ancho de contenido. */
   .container{
     max-width:760px;
   }
 
   /* ===== 2. MENÚ LATERAL ===== */
+/* Menú lateral fijo utilizado en pantallas grandes. */
   .sidebar{
     position:fixed;
     top:0; left:0; bottom:0;
@@ -74,9 +85,12 @@
     overflow-y:auto;
   }
 
+/* Personaliza la barra de desplazamiento del menú lateral. */
+  .sidebar::-webkit-scrollbar
   .sidebar::-webkit-scrollbar{width:6px;}
   .sidebar::-webkit-scrollbar-thumb{background:var(--azul-secundario); border-radius:4px;}
 
+/* Caja blanca que contiene el logotipo personal. */
   .brand-mark{
     position:relative;
     width:84px;
@@ -90,6 +104,7 @@
     margin-bottom:0.65rem;
     overflow:hidden;
   }
+/* Estilo de un elemento decorativo antiguo; se conserva para no eliminar código existente. */
   .brand-mark-trace{
     position:absolute;
     inset:0;
@@ -101,6 +116,7 @@
     stroke-linecap:round;
     opacity:0.6;
   }
+/* Estilo para las letras del logotipo antiguo; se conserva aunque actualmente no se usa en el HTML. */
   .brand-mark-letters{
     position:relative;
     z-index:1;
@@ -109,6 +125,7 @@
     font-size:1.55rem;
     color:#fff;
   }
+/* Ajusta el tamaño y la forma de la imagen real del logotipo. */
   .brand-logo{
     position:relative;
     z-index:1;
@@ -118,6 +135,7 @@
     display:block;
     border-radius:10px;
   }
+/* Estilo para un texto descriptivo del logotipo que ya no aparece en el HTML. */
   .brand-mark-caption{
     font-family:var(--fuente-mono);
     font-size:0.62rem;
@@ -125,6 +143,7 @@
     margin:0 0 1.7rem 0;
   }
 
+/* Nombre de Gabriel dentro del menú lateral. */
   .sidebar h1{
     color:#fff;
     font-size:1.7rem;
@@ -132,6 +151,7 @@
     margin-bottom:0.35rem;
   }
 
+/* Texto secundario que describe el perfil. */
   .sidebar .role{
     color:var(--azul-celeste);
     font-size:0.92rem;
@@ -139,6 +159,7 @@
     margin-bottom:1.6rem;
   }
 
+/* Lista principal de navegación del portafolio. */
   .sidebar-nav{
     list-style:none;
     margin:0 0 auto 0;
@@ -146,7 +167,10 @@
     border-top:1px solid rgba(255,255,255,0.12);
     padding-top:1.4rem;
   }
+/* Separa ligeramente cada elemento de navegación del siguiente. */
+  .sidebar-nav li + li
   .sidebar-nav li + li{ margin-top:0.15rem; }
+/* Apariencia de cada enlace del menú. */
   .sidebar-nav a{
     display:flex;
     align-items:baseline;
@@ -158,12 +182,14 @@
     border-radius:8px;
     transition:background 0.15s ease, color 0.15s ease;
   }
+/* Estado visual cuando el cursor pasa sobre un enlace o recibe el foco del teclado. */
   .sidebar-nav a:hover,
   .sidebar-nav a:focus-visible{
     background:rgba(255,255,255,0.07);
     color:#fff;
     outline:none;
   }
+/* Número pequeño que identifica cada opción del menú. */
   .sidebar-nav .idx{
     font-family:var(--fuente-mono);
     font-size:0.72rem;
@@ -171,6 +197,7 @@
     min-width:1.4em;
   }
 
+/* Pie del menú lateral. */
   .sidebar-footer{
     margin-top:2rem;
     padding-top:1.4rem;
@@ -178,6 +205,7 @@
     font-size:0.85rem;
     color:rgba(255,255,255,0.55);
   }
+/* Estilo de enlaces que pudieran aparecer dentro del pie. */
   .sidebar-footer a{
     display:inline-block;
     margin-top:0.5rem;
@@ -185,21 +213,28 @@
     text-decoration:none;
     border-bottom:1px solid rgba(95,201,243,0.35);
   }
+/* Cambio de color al pasar el cursor por un enlace del pie. */
+  .sidebar-footer a:hover
   .sidebar-footer a:hover{ color:#fff; }
 
   /* ===== 3. CONTENIDO PRINCIPAL ===== */
+/* Desplaza el contenido principal para dejar espacio al menú lateral. */
   main{
     margin-left:var(--ancho-menu);
     padding:0 3.2rem 3rem 3.6rem;
   }
 
+/* Estilo común para todas las secciones principales. */
   section{
     padding:4.4rem 0;
     border-bottom:1px solid var(--borde);
     scroll-margin-top:2rem;
   }
+/* La última sección no muestra una línea inferior. */
+  section:last-of-type
   section:last-of-type{ border-bottom:none; }
 
+/* Etiqueta pequeña que identifica el tema de cada sección. */
   .kicker{
     font-family:var(--fuente-mono);
     font-size:0.78rem;
@@ -207,11 +242,13 @@
     margin-bottom:0.9rem;
   }
 
+/* Tamaño y separación de los títulos principales de sección. */
   section h2{
     font-size:2rem;
     margin-bottom:1.1rem;
   }
 
+/* Texto introductorio de apoyo que aparece debajo de algunos títulos. */
   .lede{
     font-size:1.08rem;
     color:var(--texto-secundario);
@@ -219,29 +256,36 @@
   }
 
   /* ===== 4. SECCIÓN INICIO ===== */
+/* Ajusta el espacio superior específico de la sección de inicio. */
   #inicio{
     padding-top:3.2rem;
   }
+/* Distribuye la presentación y la fotografía en una cuadrícula. */
   .hero-grid{
     display:grid;
     grid-template-columns:1.15fr 0.85fr;
     gap:2.6rem;
     align-items:start;
   }
+/* Hace más grande el título principal de la presentación. */
   .hero-copy h2{
     font-size:2.5rem;
     line-height:1.12;
   }
+/* Define tamaño y color del texto descriptivo de la presentación. */
   .hero-copy p{
     font-size:1.06rem;
     color:var(--texto-secundario);
   }
+/* Contenedor de referencia para la fotografía personal. */
   .photo-frame{
     position:relative;
   }
+/* Fondo decorativo detrás de la fotografía; actualmente está desactivado. */
   .photo-backdrop{
     display:none;
   }
+/* Marco visual que contiene la fotografía personal. */
   .photo-slot{
     position:relative;
     z-index:1;
@@ -258,6 +302,7 @@
     color:var(--texto-secundario);
     font-size:0.86rem;
   }
+/* Hace que la fotografía ocupe el marco manteniendo el recorte definido. */
   .photo-slot img{
     width:100%;
     height:100%;
@@ -266,12 +311,14 @@
   }
 
   /* ===== 5. FORMACIÓN ACADÉMICA ===== */
+/* Estructura de la línea de tiempo de formación académica. */
   .timeline{
     list-style:none;
     margin:0;
     padding:0;
     counter-reset:step;
   }
+/* Cada etapa de la línea de tiempo y su línea vertical. */
   .timeline li{
     counter-increment:step;
     position:relative;
@@ -279,10 +326,12 @@
     border-left:2px solid var(--borde);
     margin-left:0.55rem;
   }
+/* Quita la línea vertical después del último elemento. */
   .timeline li:last-child{
     border-left-color:transparent;
     padding-bottom:0;
   }
+/* Crea el círculo numerado de cada etapa usando un contador CSS. */
   .timeline li::before{
     content: counter(step, decimal-leading-zero);
     font-family:var(--fuente-mono);
@@ -299,47 +348,57 @@
     align-items:center;
     justify-content:center;
   }
+/* Título de cada etapa educativa. */
   .timeline h3{
     font-size:1.12rem;
     margin-bottom:0.25rem;
   }
+/* Texto secundario con la institución o tipo de formación. */
   .timeline .meta{
     color:var(--azul-claro);
     font-size:0.9rem;
     font-weight:500;
     margin-bottom:0.4rem;
   }
+/* Texto descriptivo de cada etapa. */
   .timeline p{
     color:var(--texto-secundario);
     font-size:0.97rem;
     max-width:56ch;
   }
+/* Lista secundaria utilizada dentro de la formación adicional. */
   .sub-list{
     margin:0.6rem 0 0 0;
     padding-left:1.1rem;
     color:var(--texto-secundario);
     font-size:0.95rem;
   }
+/* Restablece el formato de los elementos de la lista secundaria. */
   .sub-list li{
     border:none;
     padding:0 0 0.4rem 0;
     margin:0;
   }
+/* Elimina el número decorativo de la línea de tiempo dentro de la sublista. */
+  .sub-list li::before
   .sub-list li::before{ content:none; }
 
   /* ===== 6. LOGROS Y CERTIFICACIONES ===== */
+/* Distribuye las tarjetas de logros en columnas. */
   .achievement-highlights{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:1rem;
     margin-bottom:2.2rem;
   }
+/* Diseño de cada tarjeta destacada de logro. */
   .achievement-highlights .card{
     background:var(--azul-principal);
     color:#fff;
     border-radius:12px;
     padding:1.4rem 1.5rem;
   }
+/* Etiqueta pequeña que identifica el evento o concurso. */
   .achievement-highlights .card .tag{
     font-family:var(--fuente-mono);
     font-size:0.72rem;
@@ -347,17 +406,20 @@
     display:block;
     margin-bottom:0.5rem;
   }
+/* Título del logro dentro de la tarjeta. */
   .achievement-highlights .card h3{
     color:#fff;
     font-size:1.05rem;
     margin-bottom:0.2rem;
   }
+/* Descripción breve del logro. */
   .achievement-highlights .card p{
     color:rgba(255,255,255,0.65);
     font-size:0.88rem;
     margin:0;
   }
 
+/* Subtítulo para separar la lista de logros de las certificaciones. */
   h3.section-sub{
     font-size:1.1rem;
     color:var(--azul-principal);
@@ -365,6 +427,7 @@
     padding-top:0.4rem;
   }
 
+/* Fila horizontal desplazable de certificaciones. */
   .cert-grid{
     display:flex;
     gap:1.1rem;
@@ -372,8 +435,11 @@
     padding:0.5rem 0.3rem 1.4rem 0.3rem;
     scroll-snap-type:x proximity;
   }
+/* Personaliza la barra de desplazamiento horizontal de las certificaciones. */
+  .cert-grid::-webkit-scrollbar
   .cert-grid::-webkit-scrollbar{ height:6px; }
   .cert-grid::-webkit-scrollbar-thumb{ background:var(--borde); border-radius:4px; }
+/* Tarjeta individual de una certificación. */
   .cert-slot{
     flex:0 0 190px;
     border:1.5px dashed var(--texto-suave);
@@ -392,6 +458,7 @@
     cursor:pointer;
     transition:border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
   }
+/* Cambia el aspecto de una certificación cuando se señala o recibe foco. */
   .cert-slot:hover,
   .cert-slot:focus-visible{
     border-color:var(--azul-claro);
@@ -399,20 +466,29 @@
     background:var(--blanco);
     outline:none;
   }
+/* Tamaño y color del icono de documento. */
   .cert-icon{
     width:26px;
     height:26px;
     color:var(--azul-medio);
     margin-bottom:0.55rem;
   }
+/* Desplaza ligeramente algunas tarjetas para crear una composición menos rígida. */
+  .cert-slot:nth-child(3n+2)
   .cert-slot:nth-child(3n+2){ transform:translateY(14px); }
+/* Gira ligeramente cada tercera tarjeta empezando por la primera. */
+  .cert-slot:nth-child(3n+1)
   .cert-slot:nth-child(3n+1){ transform:rotate(-1deg); }
+/* Gira y desplaza otra parte de las tarjetas para variar la posición. */
+  .cert-slot:nth-child(3n)
   .cert-slot:nth-child(3n){ transform:rotate(1deg) translateY(6px); }
+/* Nombre de la certificación. */
   .cert-slot .cert-name{
     font-size:0.84rem;
     font-weight:500;
     color:var(--texto-principal);
   }
+/* Texto que indica que la certificación puede visualizarse. */
   .cert-slot .cert-hint{
     font-family:var(--fuente-mono);
     font-size:0.66rem;
@@ -421,6 +497,7 @@
   }
 
   /* ===== 7. VOLUNTARIADO ===== */
+/* Fila de una experiencia de voluntariado. */
   .volunteer-row{
     display:grid;
     grid-template-columns:0.9fr 1.1fr;
@@ -429,7 +506,10 @@
     padding:1.8rem 0;
     border-top:1px solid var(--borde);
   }
+/* La primera experiencia no necesita una línea superior. */
+  .volunteer-row:first-of-type
   .volunteer-row:first-of-type{ border-top:none; padding-top:0; }
+/* Marco de las fotografías de voluntariado. */
   .volunteer-row .img-slot{
     height:280px;
     border:1.5px dashed var(--texto-suave);
@@ -444,6 +524,7 @@
     font-size:0.82rem;
   }
 
+/* Ajusta las fotografías de voluntariado dentro de su marco sin deformarlas. */
   .volunteer-row .img-slot img{
     width:100%;
     height:100%;
@@ -452,6 +533,7 @@
     object-fit:contain;
     display:block;
   }
+/* Texto auxiliar que podría aparecer dentro del espacio de imagen. */
   .volunteer-row .img-slot span{
     font-family:var(--fuente-mono);
     font-size:0.68rem;
@@ -459,32 +541,44 @@
     display:block;
     margin-top:0.3rem;
   }
+/* Título de cada actividad de voluntariado. */
+  .volunteer-row h3
   .volunteer-row h3{ font-size:1.1rem; }
+/* Descripción de cada actividad de voluntariado. */
+  .volunteer-row p
   .volunteer-row p{ color:var(--texto-secundario); font-size:0.96rem; margin:0; }
+/* Invierte la posición de imagen y texto en filas alternas. */
   .volunteer-row:nth-of-type(even){
     direction:rtl;
   }
+/* Devuelve la dirección normal al contenido interno después de invertir la fila. */
   .volunteer-row:nth-of-type(even) > *{
     direction:ltr;
   }
 
   /* ===== 8. PORTAFOLIO ===== */
+/* Encabezado de cada categoría del portafolio con una línea divisoria. */
   .portfolio-tabs-label{
     display:flex;
     align-items:center;
     gap:0.6rem;
     margin:2.6rem 0 1.2rem 0;
   }
+/* El primer encabezado de categoría no necesita margen superior adicional. */
+  .portfolio-tabs-label:first-of-type
   .portfolio-tabs-label:first-of-type{ margin-top:0; }
+/* Título de la categoría del portafolio. */
   .portfolio-tabs-label h3{
     font-size:1.2rem;
     margin:0;
   }
+/* Línea flexible que ocupa el espacio entre el título y el enlace. */
   .portfolio-tabs-label .line{
     flex:1;
     height:1px;
     background:var(--borde);
   }
+/* Enlace hacia el archivo con los proyectos y sus direcciones. */
   .repo-link{
     font-family:var(--fuente-mono);
     font-size:0.78rem;
@@ -495,15 +589,19 @@
     border-radius:20px;
     white-space:nowrap;
   }
+/* Fondo del enlace de proyectos al pasar el cursor. */
+  .repo-link:hover
   .repo-link:hover{ background:var(--fondo-secundario); }
 
   /* Leyenda de categorías de proyectos */
+/* Distribución de la leyenda de categorías tecnológicas. */
   .cat-legend{
     display:flex;
     flex-wrap:wrap;
     gap:1.3rem;
     margin-bottom:1.5rem;
   }
+/* Alineación del texto y punto de cada categoría. */
   .cat-legend span{
     display:flex;
     align-items:center;
@@ -511,6 +609,7 @@
     font-size:0.84rem;
     color:var(--texto-secundario);
   }
+/* Punto circular que representa el color de una categoría. */
   .cat-legend i{
     width:9px;
     height:9px;
@@ -518,6 +617,7 @@
     display:inline-block;
   }
 
+/* Tarjeta del documento académico. */
   .research-card{
     display:flex;
     align-items:center;
@@ -529,6 +629,7 @@
     border-radius:14px;
     background:var(--blanco);
   }
+/* Etiqueta superior que indica el tipo de documento. */
   .research-card .research-kind{
     font-family:var(--fuente-mono);
     font-size:0.68rem;
@@ -537,15 +638,18 @@
     display:block;
     margin-bottom:0.35rem;
   }
+/* Título del documento académico. */
   .research-card h4{
     font-size:1.05rem;
     margin:0 0 0.25rem 0;
   }
+/* Descripción breve del documento. */
   .research-card p{
     margin:0;
     color:var(--texto-secundario);
     font-size:0.88rem;
   }
+/* Estilo para enlaces dentro de la tarjeta de investigación. */
   .research-card a{
     flex:0 0 auto;
     background:var(--azul-principal);
@@ -559,12 +663,14 @@
 
 
   /* Tarjetas de proyectos */
+/* Cuadrícula adaptable de proyectos tecnológicos. */
   .project-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
     gap:1.4rem;
     margin-bottom:1rem;
   }
+/* Diseño base de cada tarjeta de proyecto. */
   .project-card{
     position:relative;
     border:1px solid var(--borde);
@@ -572,6 +678,7 @@
     overflow:hidden;
     background:#fff;
   }
+/* Barra superior de color que identifica la categoría del proyecto. */
   .project-card::before{
     content:"";
     position:absolute;
@@ -579,6 +686,7 @@
     height:4px;
     background:var(--accent, var(--azul-medio));
   }
+/* Área reservada para la imagen de cada proyecto. */
   .project-card .img-slot{
     height:240px;
     background:var(--fondo-secundario);
@@ -592,6 +700,7 @@
     font-size:0.8rem;
   }
 
+/* Ajusta la imagen del proyecto dentro de su área sin deformarla. */
   .project-card .img-slot img{
     width:100%;
     height:100%;
@@ -600,6 +709,7 @@
     object-fit:contain;
     display:block;
   }
+/* Texto auxiliar del espacio de imagen, conservado por compatibilidad. */
   .project-card .img-slot span{
     font-family:var(--fuente-mono);
     font-size:0.66rem;
@@ -607,18 +717,22 @@
     display:block;
     margin-top:0.3rem;
   }
+/* Espaciado interno de la parte textual de una tarjeta. */
   .project-card .body{
     padding:1.15rem 1.25rem 1.35rem 1.25rem;
   }
+/* Nombre del proyecto. */
   .project-card h4{
     font-size:1.05rem;
     margin-bottom:0.35rem;
   }
+/* Descripción del proyecto. */
   .project-card p{
     font-size:0.9rem;
     color:var(--texto-secundario);
     margin:0 0 0.8rem 0;
   }
+/* Lista horizontal de tecnologías utilizadas. */
   .stack{
     list-style:none;
     display:flex;
@@ -627,6 +741,7 @@
     margin:0;
     padding:0;
   }
+/* Apariencia de cada etiqueta tecnológica. */
   .stack li{
     font-family:var(--fuente-mono);
     font-size:0.68rem;
@@ -636,6 +751,7 @@
     border-radius:5px;
   }
 
+/* Lista de categorías o tipos de obras artísticas. */
   .art-list{
     list-style:none;
     margin:0 0 1.6rem 0;
@@ -644,6 +760,7 @@
     flex-wrap:wrap;
     gap:0.6rem;
   }
+/* Apariencia de cada etiqueta artística. */
   .art-list li{
     font-size:0.92rem;
     color:var(--azul-principal);
@@ -652,12 +769,14 @@
     padding:0.45rem 0.9rem;
     border-radius:20px;
   }
+/* Cuadrícula principal de la galería artística. */
   .art-gallery{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:1rem;
     align-items:stretch;
   }
+/* Marco individual para cada dibujo. */
   .art-slot{
     height:280px;
     min-height:220px;
@@ -675,6 +794,7 @@
     overflow:hidden;
   }
 
+/* Ajusta los dibujos para que quepan completos en sus marcos. */
   .art-slot img{
     width:100%;
     height:100%;
@@ -684,6 +804,7 @@
     display:block;
   }
 
+/* Marco que contiene el poema dentro de la galería. */
   .poem-slot{
     grid-column:1 / -1;
     min-height:170px;
@@ -699,16 +820,19 @@
     padding:1.4rem;
     color:var(--texto-secundario);
   }
+/* Título del poema. */
   .poem-slot h4{
     margin:0 0 0.4rem 0;
     font-size:1rem;
     color:var(--azul-principal);
   }
+/* Texto del poema. */
   .poem-slot p{
     margin:0;
     font-size:0.85rem;
     color:var(--texto-suave);
   }
+/* Texto auxiliar de los espacios artísticos. */
   .art-slot span{
     font-family:var(--fuente-mono);
     font-size:0.65rem;
@@ -718,19 +842,37 @@
   }
 
 
+/* Ventana modal que aparece sobre toda la página para mostrar imágenes o PDFs. */
+  .media-modal{
   .media-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:3rem .75rem 1rem;background:rgba(3,13,28,.88)}
+/* Cuando el checkbox está marcado, se muestra el modal que viene inmediatamente después. */
+  .media-toggle:checked + .media-modal
+  /* Regla final de respaldo para mostrar el modal cuando su checkbox está marcado. */
+  .media-toggle:checked + .media-modal{
   .media-toggle:checked + .media-modal{display:flex}
   
+/* Fondo invisible que ocupa toda la ventana y permite cerrarla al hacer clic. */
+  .media-modal .modal-bg{
   .media-modal .modal-bg{position:absolute;inset:0}
+/* Botón de cierre circular ubicado en la esquina superior derecha. */
+  .media-modal .modal-close{
   .media-modal .modal-close{position:absolute;top:.7rem;right:.8rem;z-index:2;width:2.4rem;height:2.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);color:#fff;text-decoration:none;font-size:1.5rem}
+/* Tamaño máximo de las imágenes dentro del modal. */
+  .media-modal .modal-img{
   .media-modal .modal-img{position:relative;z-index:1;max-width:94vw;max-height:84vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 20px 70px rgba(0,0,0,.45)}
+/* Tamaño y apariencia del visor de documentos PDF. */
+  .media-modal iframe{
   .media-modal iframe{position:relative;z-index:1;width:94vw;max-width:1100px;height:84vh;border:0;border-radius:10px;background:#fff;box-shadow:0 20px 70px rgba(0,0,0,.45)}
+/* Convierte la zona de una imagen en un elemento clicable que abre el modal. */
+  .media-trigger{
   .media-trigger{display:flex;width:100%;height:100%;align-items:center;justify-content:center;cursor:zoom-in;text-decoration:none}
   @media (max-width:980px){.media-modal iframe{width:96vw;height:82svh}.media-modal .modal-img{max-width:96vw;max-height:82svh}.media-modal{padding:.5rem}}
 
   
 
+/* El botón de investigación utiliza un label asociado al checkbox para abrir el PDF sin JavaScript. */
 /* Botón para abrir el documento académico */
+/* Apariencia del botón que abre el anteproyecto académico. */
 .research-button{
   flex:0 0 auto;
   background:var(--azul-principal);
@@ -743,6 +885,7 @@
 }
 
 /* ===== 9. CURRÍCULO ===== */
+/* Tarjeta destacada que presenta y contiene el enlace de descarga del CV. */
   .cv-box{
     background:linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
     border-radius:18px;
@@ -754,17 +897,20 @@
     gap:2rem;
     flex-wrap:wrap;
   }
+/* Título dentro de la tarjeta del currículo. */
   .cv-box h3{
     color:#fff;
     font-size:1.3rem;
     margin-bottom:0.3rem;
   }
+/* Descripción del archivo de currículo. */
   .cv-box p{
     color:rgba(255,255,255,0.7);
     margin:0;
     font-size:0.92rem;
     max-width:38ch;
   }
+/* Botón de descarga del CV. */
   .cv-button{
     background:var(--azul-celeste);
     color:var(--azul-oscuro);
@@ -776,23 +922,30 @@
     white-space:nowrap;
     transition:transform 0.15s ease, box-shadow 0.15s ease;
   }
+/* Efecto visual del botón del CV al pasar el cursor. */
   .cv-button:hover{
     transform:translateY(-1px);
     box-shadow:0 8px 20px rgba(0,0,0,0.25);
   }
 
+/* Esta regla permite que la tarjeta de investigación se acomode verticalmente en pantallas pequeñas. */
   /* En pantallas pequeñas, la tarjeta académica pasa a una columna. */
   @media (max-width:980px){
+    /* La investigación también se acomoda verticalmente en móvil. */
+    .research-card{
     .research-card{align-items:flex-start; flex-direction:column;}
   }
 
+/* Las siguientes reglas sustituyen parte del diseño de escritorio cuando la pantalla mide 980px o menos. */
   /* ===== 10. ADAPTACIÓN PARA CELULAR Y TABLET ===== */
   @media (max-width: 980px){
+    /* En móvil se elimina el espacio lateral reservado al menú fijo. */
     :root{ --ancho-menu:0px; }
 
     /* En celular el menú queda fijo arriba y no ocupa espacio lateral. */
     body{ padding-top:7.6rem; }
 
+    /* En móvil el menú pasa de lateral a una barra fija en la parte superior. */
     .sidebar{
       position:fixed;
       top:0;
@@ -813,6 +966,7 @@
     }
 
     /* Primera fila: logo y nombre. */
+    /* Reduce el logotipo para la barra superior móvil. */
     .brand-mark{
       display:inline-flex;
       vertical-align:middle;
@@ -825,6 +979,7 @@
     .brand-logo{ width:76%; height:76%; border-radius:8px; }
     .brand-mark-caption{ display:none; }
 
+    /* Reduce el nombre para que quepa junto al logotipo. */
     .sidebar h1{
       display:inline-block;
       vertical-align:middle;
@@ -834,9 +989,11 @@
       margin:0;
     }
 
+    /* Oculta la descripción del perfil para ahorrar espacio vertical en móvil. */
     .sidebar .role{ display:none; }
 
     /* Segunda fila: navegación horizontal desplazable. */
+    /* Convierte el menú móvil en una fila horizontal desplazable. */
     .sidebar-nav{
       list-style:none;
       border-top:1px solid rgba(255,255,255,0.12);
@@ -852,11 +1009,15 @@
       white-space:nowrap;
       scrollbar-width:none;
     }
+    /* Oculta la barra visual del desplazamiento horizontal en navegadores WebKit. */
+    .sidebar-nav::-webkit-scrollbar
     .sidebar-nav::-webkit-scrollbar{ display:none; }
+    /* Evita que cada opción del menú móvil se encoja. */
     .sidebar-nav li{
       flex:0 0 auto;
       margin:0;
     }
+    /* Forma de cada botón de navegación móvil. */
     .sidebar-nav a{
       display:block;
       padding:0.42rem 0.72rem;
@@ -867,26 +1028,39 @@
       font-size:0.78rem;
       line-height:1;
     }
+    /* Estado activo por cursor o teclado en móvil. */
     .sidebar-nav a:hover,
     .sidebar-nav a:focus-visible{
       background:rgba(255,255,255,0.11);
       color:#fff;
     }
+    /* Oculta los números 01, 02, 03... para dar más espacio en móvil. */
     .sidebar-nav .idx{ display:none; }
 
+    /* Oculta el pie del menú porque la barra móvil debe ser compacta. */
     .sidebar-footer{ display:none; }
 
+    /* El contenido móvil ya no necesita margen lateral. */
     main{
       margin-left:0;
       padding:0 1.1rem 2.5rem 1.1rem;
     }
 
+    /* En móvil texto y fotografía pasan a una sola columna. */
     .hero-grid{ grid-template-columns:1fr; }
+    /* Coloca la fotografía antes del texto en pantallas pequeñas. */
     .photo-frame{ order:-1; }
     .photo-slot{ aspect-ratio:16/9; border-radius:20px 6px 20px 6px; }
-    .photo-backdrop{ display:none; }
+    .photo-backdrop{
+    display:none;
+  }
+    /* Los logros se muestran uno debajo de otro en móvil. */
     .achievement-highlights{ grid-template-columns:1fr; }
+    /* Reduce el ancho de las tarjetas de certificación en pantallas pequeñas. */
     .cert-slot{ flex-basis:160px; }
+    /* Cada experiencia de voluntariado pasa a una sola columna. */
+    .volunteer-row,
+    .volunteer-row:nth-of-type(even){
     .volunteer-row,
     .volunteer-row:nth-of-type(even){
       grid-template-columns:1fr;
@@ -896,24 +1070,32 @@
       align-items:flex-start;
       flex-direction:column;
     }
+    /* El botón de investigación ocupa todo el ancho disponible. */
     .research-card a{
       width:100%;
       text-align:center;
     }
+    /* Los proyectos se muestran en una sola columna en móvil. */
     .project-grid{ grid-template-columns:1fr; }
     .project-card .img-slot{ height:220px; }
     .volunteer-row .img-slot{ height:240px; }
+    /* La galería artística pasa a dos columnas en móvil. */
     .art-gallery{ grid-template-columns:repeat(2,1fr); }
     .art-slot{ height:190px; min-height:190px; }
     .poem-slot{ min-height:160px; }
+    /* La tarjeta del CV se acomoda verticalmente en pantallas pequeñas. */
     .cv-box{ flex-direction:column; align-items:flex-start; text-align:left; }
   }
 
+  /* Respeta la preferencia del usuario de reducir animaciones y desplazamientos. */
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .cv-button{ transition:none; }
   }
 
+  /* Mantiene ocultos los checkbox que controlan los modales. */
   .media-toggle{display:none}
   .media-toggle:checked + .media-modal{display:flex}
+  /* Indica visualmente que el fondo y el botón de cierre se pueden pulsar. */
+  .media-modal .modal-bg,.media-modal .modal-close{
   .media-modal .modal-bg,.media-modal .modal-close{cursor:pointer}
