@@ -1133,17 +1133,9 @@
     .cv-button{ transition:none; }
   }
 
-  /* Mantiene los checkbox fuera de la vista y evita que el navegador desplace la página hacia ellos al abrir una imagen. */
+  /* Mantiene ocultos los checkbox que controlan las imágenes y documentos. */
   .media-toggle{
-    position:fixed;
-    top:0;
-    left:0;
-    width:1px;
-    height:1px;
-    opacity:0;
-    pointer-events:none;
-    margin:0;
-    padding:0;
+    display:none;
   }
 
   .media-toggle:checked + .media-modal{
