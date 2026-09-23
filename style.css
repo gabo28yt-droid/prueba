@@ -86,7 +86,6 @@
   }
 
 /* Personaliza la barra de desplazamiento del menú lateral. */
-  .sidebar::-webkit-scrollbar
   .sidebar::-webkit-scrollbar{width:6px;}
   .sidebar::-webkit-scrollbar-thumb{background:var(--azul-secundario); border-radius:4px;}
 
@@ -168,7 +167,6 @@
     padding-top:1.4rem;
   }
 /* Separa ligeramente cada elemento de navegación del siguiente. */
-  .sidebar-nav li + li
   .sidebar-nav li + li{ margin-top:0.15rem; }
 /* Apariencia de cada enlace del menú. */
   .sidebar-nav a{
@@ -214,7 +212,6 @@
     border-bottom:1px solid rgba(95,201,243,0.35);
   }
 /* Cambio de color al pasar el cursor por un enlace del pie. */
-  .sidebar-footer a:hover
   .sidebar-footer a:hover{ color:#fff; }
 
   /* ===== 3. CONTENIDO PRINCIPAL ===== */
@@ -231,7 +228,6 @@
     scroll-margin-top:2rem;
   }
 /* La última sección no muestra una línea inferior. */
-  section:last-of-type
   section:last-of-type{ border-bottom:none; }
 
 /* Etiqueta pequeña que identifica el tema de cada sección. */
@@ -437,7 +433,6 @@
     scroll-snap-type:x proximity;
   }
 /* Personaliza la barra de desplazamiento horizontal de las certificaciones. */
-  .cert-grid::-webkit-scrollbar
   .cert-grid::-webkit-scrollbar{ height:6px; }
   .cert-grid::-webkit-scrollbar-thumb{ background:var(--borde); border-radius:4px; }
 /* Tarjeta individual de una certificación. */
@@ -475,13 +470,10 @@
     margin-bottom:0.55rem;
   }
 /* Desplaza ligeramente algunas tarjetas para crear una composición menos rígida. */
-  .cert-slot:nth-child(3n+2)
   .cert-slot:nth-child(3n+2){ transform:translateY(14px); }
 /* Gira ligeramente cada tercera tarjeta empezando por la primera. */
-  .cert-slot:nth-child(3n+1)
   .cert-slot:nth-child(3n+1){ transform:rotate(-1deg); }
 /* Gira y desplaza otra parte de las tarjetas para variar la posición. */
-  .cert-slot:nth-child(3n)
   .cert-slot:nth-child(3n){ transform:rotate(1deg) translateY(6px); }
 /* Nombre de la certificación. */
   .cert-slot .cert-name{
@@ -508,7 +500,6 @@
     border-top:1px solid var(--borde);
   }
 /* La primera experiencia no necesita una línea superior. */
-  .volunteer-row:first-of-type
   .volunteer-row:first-of-type{ border-top:none; padding-top:0; }
 /* Marco de las fotografías de voluntariado. */
   .volunteer-row .img-slot{
@@ -543,10 +534,8 @@
     margin-top:0.3rem;
   }
 /* Título de cada actividad de voluntariado. */
-  .volunteer-row h3
   .volunteer-row h3{ font-size:1.1rem; }
 /* Descripción de cada actividad de voluntariado. */
-  .volunteer-row p
   .volunteer-row p{ color:var(--texto-secundario); font-size:0.96rem; margin:0; }
 /* Invierte la posición de imagen y texto en filas alternas. */
   .volunteer-row:nth-of-type(even){
@@ -566,7 +555,6 @@
     margin:2.6rem 0 1.2rem 0;
   }
 /* El primer encabezado de categoría no necesita margen superior adicional. */
-  .portfolio-tabs-label:first-of-type
   .portfolio-tabs-label:first-of-type{ margin-top:0; }
 /* Título de la categoría del portafolio. */
   .portfolio-tabs-label h3{
@@ -591,7 +579,6 @@
     white-space:nowrap;
   }
 /* Fondo del enlace de proyectos al pasar el cursor. */
-  .repo-link:hover
   .repo-link:hover{ background:var(--fondo-secundario); }
 
   /* Leyenda de categorías de proyectos */
@@ -1011,7 +998,6 @@
       scrollbar-width:none;
     }
     /* Oculta la barra visual del desplazamiento horizontal en navegadores WebKit. */
-    .sidebar-nav::-webkit-scrollbar
     .sidebar-nav::-webkit-scrollbar{ display:none; }
     /* Evita que cada opción del menú móvil se encoja. */
     .sidebar-nav li{
