@@ -665,13 +665,9 @@
     overflow:hidden;
     background:#fff;
   }
-/* Barra superior de color que identifica la categoría del proyecto. */
+/* La tarjeta ya no usa una barra de color para identificar categorías. */
   .project-card::before{
-    content:"";
-    position:absolute;
-    top:0; left:0; right:0;
-    height:4px;
-    background:var(--accent, var(--azul-medio));
+    content:none;
   }
 /* Área reservada para la imagen de cada proyecto. */
   .project-card .img-slot{
